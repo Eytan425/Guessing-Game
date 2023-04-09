@@ -1,8 +1,8 @@
 print("Hello and welcome to the number guessing game!!")
 print("Made By: Eytan Benittah")
-import signInNum
-from signInNum import find_coins_for_username
-from signInNum import username
+import sign_in_sign_up
+from sign_in_sign_up import find_coins_for_username
+from sign_in_sign_up import username
 import random
 
 def load_hints(number):
@@ -21,6 +21,7 @@ def load_hints(number):
 def play_game(coins):
     lives = 3
     number = random.randint(1, 100)
+    print(number)
     hints = load_hints(number)
     print(f"You have {coins} coins and {lives} lives. Guess the number between 1 and 100.")
     
@@ -77,7 +78,7 @@ def play_game(coins):
 
 def update_user_balance(updated_coins):
     user = {"user": username, "coins": updated_coins}
-    signInNum.update_coins_for_username(user)
+    sign_in_sign_up.update_coins_for_username(user)
     print(f"Balance of user {username} updated to {updated_coins} coins.")
 
 
